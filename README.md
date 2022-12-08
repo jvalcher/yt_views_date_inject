@@ -1,6 +1,6 @@
 # YouTube views and creation date styling
 
-### Chrome extension that increases the font size and adds a line separator and padding to YouTube's view count and creation date
+Chrome extension that increases the font size and adds a line separator and padding to YouTube's view count and creation date
 
 ---
 
