@@ -1,54 +1,36 @@
 
-
-let try_infoC = 1;
-let try_infoId = 1;
-let counter = 0;
-let infoC = null;
-let infoId = null;
-
 // Inject views, creation date styling
-while ((try_infoC === 1 || try_infoId === 1) && counter < 5) {
-    
-    // Add #info-container styling
-    infoC = document.querySelector('#info-container');
-    if (try_infoC === 1 && infoC !== null) {
-        infoC.style.display = "block";
-        infoC.style.justifyContent = "left";
-        infoC.style.width = "75%";
-        infoC.style.fontSize = "1.5rem";
-        infoC.style.borderBottom = "1px solid white";
-        infoC.style.marginBottom = "10px";
-        infoC.style.paddingBottom = "10px";
-        try_infoC = 0;
-    } else {
-        // wait 1 second if element not loaded
-        setTimeout(() => {
-            console.log("Views/creation date styling failed: #info-container element not loaded, trying again...");
-        }, 1000);
-    }
-    
-    // Add #info <span> padding
-    infoId = document.querySelector('#info span:nth-child(1)');
-    if (try_infoId === 1 && infoId !== null) {
-        infoId.style.paddingRight = "20px";
-        infoId = document.querySelector('#info span:nth-child(3)');
-        infoId.style.paddingLeft = "20px";
-        try_infoId = 0;
-    } else {
-        // wait 1 second if element not loaded
-        setTimeout(() => {
-            console.log("Views/creation date styling failed: #info <span> elements not loaded, trying again...");
-        }, 1000);
-    }
+document.addEventListener('yt-navigate-finish', () => {
 
-    counter += 1;
+    let stylingAttempts = 1;
+    const styleInterval = setInterval(() => { 
 
-    // Print success message
-    if (try_infoId === 0 && try_infoC === 0) { 
-        console.log("Views/creation date styling successful");
-        break;
-    }
+        if (document.querySelector('#info-container') && document.querySelector('#info span:nth-child(1)') && document.querySelector('#info span:nth-child(3)')) {
 
-    // Print failure message
-    if (counter === 5) console.log("Views/creation date styling failed");
-}
+            clearInterval(styleInterval);
+
+            // Add #info-container styling
+            let  infoElem = document.querySelector('#info-container');
+            infoElem.style.display = "block";
+            infoElem.style.justifyContent = "left";
+            infoElem.style.width = "75%";
+            infoElem.style.fontSize = "1.5rem";
+            infoElem.style.borderBottom = "1px solid white";
+            infoElem.style.marginBottom = "10px";
+            infoElem.style.paddingBottom = "10px";
+
+            // Add #info <span> padding
+            infoElem = document.querySelector('#info span:nth-child(1)');
+            infoElem.style.paddingRight = "20px";
+            infoElem = document.querySelector('#info span:nth-child(3)');
+            infoElem.style.paddingLeft = "20px";
+        }
+
+        // Make 5 attempts to style
+        if (stylingAttempts >= 5) {
+            clearInterval(styleInterval);
+        }
+        stylingAttempts++;
+
+    }, 2000);
+});

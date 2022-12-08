@@ -1,7 +1,7 @@
 {
     "name": "YouTube Views and Creation Date Styling",
     "description": "Changes view count and creation date CSS styling of YouTube videos for higher visibility.",
-    "version": "0.0.7",
+    "version": "1.0.0",
     "manifest_version": 3,
     "action": {
         "default-icon": {
@@ -17,12 +17,9 @@
     },
     "content_scripts": [
         {
-            "matches": [
-                "https://*.youtube.com/watch*"
-            ],
-            "js": [
-                "yt_views_date.js"
-            ]
+            "matches": ["*://*.youtube.com/*"],
+            "js": ["yt_views_date.js"],
+            "run_at": "document_start"
         }
     ]
 }
