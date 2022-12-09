@@ -1,10 +1,11 @@
 
-// Inject views, creation date styling
 document.addEventListener('yt-navigate-finish', () => {
 
+    // Attempt to style elements
     let stylingAttempts = 1;
     const styleInterval = setInterval(() => { 
 
+        // If all required elements are present...
         if (document.querySelector('#info-container') && document.querySelector('#info span:nth-child(1)') && document.querySelector('#info span:nth-child(3)')) {
 
             clearInterval(styleInterval);
@@ -26,11 +27,8 @@ document.addEventListener('yt-navigate-finish', () => {
             infoElem.style.paddingLeft = "20px";
         }
 
-        // Make 5 attempts to style
-        if (stylingAttempts >= 5) {
-            clearInterval(styleInterval);
-        }
+        // Make 5 attempts, 2 secs apart
+        if (stylingAttempts >= 5) clearInterval(styleInterval);
         stylingAttempts++;
-
     }, 2000);
 });

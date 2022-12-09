@@ -1,5 +1,5 @@
 <h1 align="center">YouTube views and creation date styling</h1>
-<p align="center">Browser extension that increases the font size and adds a line separator and padding to YouTube's view count and creation date</p>
+<p align="center">Increases the font size and adds padding to YouTube's view count and creation date</p>
 <br>
 <p align="center"><img margin-left="auto" src="art/screenshot_640x400.png" width="500px"></p>
 
