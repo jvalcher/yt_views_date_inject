@@ -5,7 +5,7 @@
 
 ## Installation options
 
-- Chrome Store approval pending...
+- Download the [Chrome extension](https://chrome.google.com/webstore/detail/youtube-views-and-creatio/bjnnepoibpbppckipbggcajaclfjdbhb).
 
 - Run as an unpacked Chrome extension
   - Go to *chrome://extensions/*
