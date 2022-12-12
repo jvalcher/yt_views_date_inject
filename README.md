@@ -5,7 +5,7 @@
 
 ## Installation options
 
-1. Download the [Chrome](https://chrome.google.com/webstore/detail/youtube-views-and-creatio/bjnnepoibpbppckipbggcajaclfjdbhb) extension. The Firefox extension is pending...
+1. Download the [Chrome](https://chrome.google.com/webstore/detail/youtube-views-and-creatio/bjnnepoibpbppckipbggcajaclfjdbhb) or [Firefox](https://addons.mozilla.org/en-US/firefox/addon/youtube-views-and-date-styler/) extension.
 
 
 2. Paste the JavaScript code into a website injector extension like:
