@@ -1,4 +1,14 @@
 
+function setInfo (infoContainer, spans) {
+    infoContainer = document.getElementById('info-container');
+    spans = infoContainer.getElementsByTagName('span');
+
+    infoContainer.style.lineHeight = "2.25rem";
+    infoContainer.style.fontSize = "2rem";
+    infoContainer.style.paddingBottom = "8px";
+    spans[1].textContent = "         ";
+}
+
 document.addEventListener('yt-navigate-finish', () => {
 
     // Attempt to style elements
@@ -6,21 +16,21 @@ document.addEventListener('yt-navigate-finish', () => {
     const styleInterval = setInterval(() => { 
 
         // If all required elements are present...
-        if (document.querySelector('#info-container') && document.querySelector('#info span:nth-child(1)') && document.querySelector('#info span:nth-child(3)')) {
+        if (document.querySelector('#info-container')) {
 
             clearInterval(styleInterval);
 
-            // Add #info-container styling
-            let  infoElem = document.querySelector('#info-container');
-            infoElem.style.width = "75%";
-            infoElem.style.fontSize = "1.5rem";
-            infoElem.style.borderBottom = "1px solid white";
-            infoElem.style.marginBottom = "10px";
-            infoElem.style.paddingBottom = "10px";
+            let infoContainer;
+            let spans;
+            setInfo(infoContainer, spans);
 
-            // Add #info <span> padding
-            infoElem = document.querySelector('#info span:nth-child(1)');
-            infoElem.style.paddingRight = "40px";
+            document.getElementById("expand").addEventListener("click", function() {
+                setInfo(infoContainer, spans);
+            });
+
+            document.getElementById("collapse").addEventListener("click", function() {
+                setInfo(infoContainer, spans);
+            });
         }
 
         // Make 5 attempts, 2 secs apart
