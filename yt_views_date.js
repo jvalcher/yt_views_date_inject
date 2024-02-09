@@ -7,6 +7,7 @@ function setInfo (infoContainer, spans) {
     infoContainer.style.fontSize = "2rem";
     infoContainer.style.paddingBottom = "8px";
     spans[1].textContent = "         ";
+    infoContainer.style.textDecoration = "underline";
 }
 
 document.addEventListener('yt-navigate-finish', () => {
