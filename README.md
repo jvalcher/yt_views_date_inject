@@ -6,4 +6,4 @@
 
 ## Installation options
 
-This is no longer available as a browser extension. Paste the JavaScript code into a website injector extension. This has been tested on [Code Injector](https://chromewebstore.google.com/detail/code-injector/edkcmfocepnifkbnbkmlcmegedeikdeb) for Chrome.
+This is no longer available as a browser extension. Paste the JavaScript code into a website injector. It was tested inside Code Injector for [Chrome](https://chromewebstore.google.com/detail/code-injector/edkcmfocepnifkbnbkmlcmegedeikdeb) and [Firefox](https://addons.mozilla.org/en-US/firefox/addon/codeinjector/).
