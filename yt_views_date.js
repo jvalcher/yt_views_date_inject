@@ -13,7 +13,6 @@ document.addEventListener('yt-navigate-finish', () => {
     let stylingAttempts = 1;
     const styleInterval = setInterval(() => { 
 
-        // If all required elements are present...
         if (document.querySelector('#info-container')) {
 
             let infoContainer = document.getElementById('info-container');
