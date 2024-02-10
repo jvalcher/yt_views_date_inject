@@ -1,8 +1,5 @@
 
-function setInfo (infoContainer, spans) {
-    infoContainer = document.getElementById('info-container');
-    spans = infoContainer.getElementsByTagName('span');
-
+function changeStyling (infoContainer, spans) {
     infoContainer.style.lineHeight = "2.25rem";
     infoContainer.style.fontSize = "2rem";
     infoContainer.style.paddingBottom = "8px";
@@ -19,23 +16,24 @@ document.addEventListener('yt-navigate-finish', () => {
         // If all required elements are present...
         if (document.querySelector('#info-container')) {
 
-            clearInterval(styleInterval);
+            let infoContainer = document.getElementById('info-container');
+            let spans = infoContainer.getElementsByTagName('span');
 
-            let infoContainer;
-            let spans;
-            setInfo(infoContainer, spans);
+            changeStyling(infoContainer, spans);
 
             document.getElementById("expand").addEventListener("click", function() {
-                setInfo(infoContainer, spans);
+                changeStyling(infoContainer, spans);
             });
 
             document.getElementById("collapse").addEventListener("click", function() {
-                setInfo(infoContainer, spans);
+                changeStyling(infoContainer, spans);
             });
+
+            clearInterval(styleInterval);
         }
 
-        // Make 5 attempts, 2 secs apart
+        // Make 5 attempts, 1 sec apart
         if (stylingAttempts >= 5) clearInterval(styleInterval);
         stylingAttempts++;
-    }, 2000);
+    }, 1000);
 });
