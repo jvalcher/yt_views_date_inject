@@ -9,7 +9,7 @@ function changeStyling (infoContainer, spans) {
 
 document.addEventListener('yt-navigate-finish', () => {
 
-    // Attempt to style elements
+    // make 5 attempts, 1 second apart, to style elements
     let stylingAttempts = 1;
     const styleInterval = setInterval(() => { 
 
@@ -21,18 +21,17 @@ document.addEventListener('yt-navigate-finish', () => {
 
             changeStyling(infoContainer, spans);
 
-            document.getElementById("expand").addEventListener("click", function() {
+            document.getElementById("expand").addEventListener("click", () => {
                 changeStyling(infoContainer, spans);
             });
 
-            document.getElementById("collapse").addEventListener("click", function() {
+            document.getElementById("collapse").addEventListener("click", () => {
                 changeStyling(infoContainer, spans);
             });
 
             clearInterval(styleInterval);
         }
 
-        // Make 5 attempts, 1 sec apart
         if (stylingAttempts >= 5) clearInterval(styleInterval);
         stylingAttempts++;
     }, 1000);
